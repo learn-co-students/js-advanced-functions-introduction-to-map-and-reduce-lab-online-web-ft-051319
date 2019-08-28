@@ -27,28 +27,18 @@ function mapToSquare(arr) {
 }
 
 function reduceToTotal(sourceArray, startingPoint=0) {
-    let reducedTotal = sourceArray.reduce(function(total, num) {
-        return total += num
-    }, startingPoint);
-    return reducedTotal;
+    for (const el of sourceArray) {
+        startingPoint += el;
+    };
+    return startingPoint;
 }
 
 function reduceToAllTrue(sourceArray) {
-    let total = true;
-    let result = sourceArray.reduce(function(total, element) {
-        return Boolean(element) == total
-    })
-    return result;
+    let result = sourceArray.find(el => el == false)
+    return result == undefined ? true : false ;
 }
 
 function reduceToAnyTrue(sourceArray) {
-    let total = false;
-    let result = sourceArray.reduce(function(total, element) {
-        if (Boolean(element) == true) {
-            return total = true;
-        } else {
-            return total;
-        }
-    })
-    return result;
+    let result = sourceArray.find(el => el == true)
+    return result == undefined ? false : true;
 }
