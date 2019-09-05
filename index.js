@@ -7,7 +7,13 @@ function mapToNegativize(array) {
 }
 
 function mapToNoChange(array) {
-    return array;
+    // return array;
+
+    let r = [];
+    for (let i = 0; i < array.length; i++ ) {
+        r.push(array[i]);
+    }
+    return r;
 }
 
 function mapToDouble(array) {
